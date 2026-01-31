@@ -309,7 +309,6 @@
             height: auto;
             display: block;
             background: #1a237e;
-            min-height: 200px;
             position: relative;
             overflow: hidden;
         }
@@ -319,52 +318,6 @@
             height: auto;
             display: block;
             object-fit: cover;
-        }
-
-        .ieo-logo-container {
-            background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #3949ab 100%);
-            padding: 40px 20px;
-            text-align: center;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 250px;
-        }
-
-        .ieo-logo-icon {
-            width: 100px;
-            height: 100px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-
-        .ieo-logo-icon img {
-            width: 80px;
-            height: 80px;
-            object-fit: contain;
-        }
-
-        .ieo-logo-text {
-            font-family: Arial, sans-serif;
-            font-size: 24px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-
-        .ieo-logo-subtext {
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-            opacity: 0.9;
-            letter-spacing: 1px;
         }
 
         .image-caption {
@@ -395,14 +348,21 @@
             word-wrap: break-word;
         }
 
+        /* Elegant Drop Cap Styling */
+        .drop-cap {
+            position: relative;
+        }
+
         .drop-cap::first-letter {
             float: left;
-            font-size: 50px;
-            line-height: 45px;
-            padding-right: 10px;
-            padding-top: 4px;
+            font-size: 56px;
+            line-height: 50px;
+            padding-right: 12px;
+            padding-top: 8px;
             color: var(--primary-red);
-            font-weight: bold;
+            font-weight: 700;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 2px 2px 4px rgba(196, 30, 58, 0.2);
         }
 
         .article-content h2 {
@@ -934,6 +894,11 @@
             .image-gallery {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .drop-cap::first-letter {
+                font-size: 64px;
+                line-height: 58px;
+            }
         }
 
         @media (min-width: 1024px) {
@@ -1030,15 +995,12 @@
         </div>
 
         <figure class="featured-image-container">
-            <div class="ieo-logo-container">
-                <div class="ieo-logo-icon">
-                    <img src="https://i.imgur.com/ieologo.png" alt="IEO Logo" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22%3E%3Ccircle cx=%2240%22 cy=%2240%22 r=%2235%22 fill=%22%23ff9800%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2230%22 text-anchor=%22middle%22 dy=%22.3em%22%3E🧠%3C/text%3E%3C/svg%3E'">
-                </div>
-                <div class="ieo-logo-text">Indian Engineering Olympiad</div>
-                <div class="ieo-logo-subtext">IEO 2018</div>
+            <div class="featured-image">
+                <!-- REPLACE THIS URL WITH YOUR UPLOADED IMAGE URL -->
+                <img src="https://i.imgur.com/YOUR_IMAGE_URL_HERE.jpg" alt="IEO 2018 Official" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22400%22%3E%3Crect fill=%22%231a237e%22 width=%22800%22 height=%22400%22/%3E%3Ctext fill=%22white%22 font-family=%22Arial%22 font-size=%2224%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22%3EIEO 2018 Official Image%3C/text%3E%3C/svg%3E'">
             </div>
             <figcaption class="image-caption">
-                Indian Engineering Olympiad (IEO) 2018 Official Logo.
+                Indian Engineering Olympiad (IEO) 2018 Official Results Portal.
                 <span class="image-credit">| Photo Credit: IEO Official</span>
             </figcaption>
         </figure>
@@ -1073,15 +1035,6 @@
                 </ul>
             </div>
 
-            <h2>IEO 2018 Official Images</h2>
-
-            <div class="image-gallery">
-                <div class="gallery-item">
-                    <img src="https://i.imgur.com/ieo2018results.jpg" alt="IEO 2018 Results Page" class="gallery-image" onerror="this.style.display='none'">
-                    <div class="gallery-caption">IEO 2018 Results Declaration Page - Students can check results using Hall Ticket Number and Mobile Number</div>
-                </div>
-            </div>
-
             <h2>Examination Details</h2>
 
             <p>
@@ -1089,7 +1042,7 @@
             </p>
 
             <p>
-                Over <strong>2,82,000 students</strong> from more than 500 engineering colleges across the country registered for this edition of the exam, making it one of the largest competitive examinations for engineering students in India.
+                Over <strong>2,82,000 students</strong> from more than 500 engineering colleges across the country registered for this edition of the exam, with nearly <strong>1,52,000 students registering only from the 3rd year of civil engineering</strong>, making it one of the largest competitive examinations for engineering students in India.
             </p>
 
             <h2>Rewards and Recognition</h2>
