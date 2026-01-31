@@ -2,13 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Indian Engineering Olympiad 2018: NIT Jaipur, Jadavpur University, and JNTUK Students Clinch Top Honors | Edu Chronicle</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
         }
 
         :root {
@@ -29,6 +34,7 @@
             color: var(--text-primary);
             background-color: #fff;
             -webkit-font-smoothing: antialiased;
+            max-width: 100vw;
         }
 
         /* Header */
@@ -39,6 +45,7 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            width: 100%;
         }
 
         .header-top {
@@ -47,15 +54,17 @@
             padding: 8px 0;
             font-size: 12px;
             font-family: Arial, sans-serif;
+            width: 100%;
         }
 
         .header-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            width: 100%;
         }
 
         .header-date {
@@ -65,7 +74,1109 @@
         .header-links a {
             color: white;
             text-decoration: none;
-            margin-left: 20px;
+            margin-left: 15px;
+            font-weight: 500;
+            font-size: 11px;
+        }
+
+        .header-main {
+            padding: 15px 0;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--primary-red);
+            letter-spacing: -1px;
+            font-family: 'Times New Roman', serif;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--text-primary);
+        }
+
+        .menu-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-primary);
+            padding: 5px;
+        }
+
+        /* Navigation */
+        .nav-bar {
+            background: #fff;
+            border-bottom: 2px solid var(--primary-red);
+            padding: 10px 0;
+            overflow-x: auto;
+            white-space: nowrap;
+            width: 100%;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-red);
+        }
+
+        .nav-links .active {
+            color: var(--primary-red);
+        }
+
+        /* Article Container */
+        .article-container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 15px;
+            width: 100%;
+        }
+
+        /* Section Label */
+        .section-label {
+            display: inline-block;
+            color: var(--primary-red);
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            border-left: 3px solid var(--primary-red);
+            padding-left: 10px;
+        }
+
+        /* Article Header */
+        .article-header {
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .article-title {
+            font-size: 24px;
+            line-height: 1.3;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            font-weight: 700;
+            word-wrap: break-word;
+        }
+
+        .article-subtitle {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.4;
+            font-family: Arial, sans-serif;
+            font-weight: 400;
+            margin-bottom: 15px;
+            word-wrap: break-word;
+        }
+
+        /* Meta Info */
+        .article-meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 0;
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+            margin-bottom: 20px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            width: 100%;
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .author-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .author-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .author-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 13px;
+        }
+
+        .author-title {
+            color: var(--text-light);
+            font-size: 10px;
+        }
+
+        .meta-divider {
+            color: var(--border-light);
+        }
+
+        .publish-date {
+            color: var(--text-secondary);
+        }
+
+        .reading-time {
+            color: var(--text-light);
+            font-size: 11px;
+        }
+
+        .social-share {
+            margin-left: auto;
+            display: flex;
+            gap: 8px;
+        }
+
+        .share-btn {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid var(--border-light);
+            background: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+
+        .share-btn:hover {
+            background: var(--bg-light);
+            border-color: var(--primary-red);
+            color: var(--primary-red);
+        }
+
+        /* Featured Image */
+        .featured-image-container {
+            margin-bottom: 20px;
+            position: relative;
+            width: 100%;
+        }
+
+        .featured-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 250px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .featured-image-content {
+            text-align: center;
+            color: white;
+            padding: 30px 20px;
+            width: 100%;
+        }
+
+        .featured-image-content h2 {
+            font-size: 40px;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .featured-image-content p {
+            font-size: 18px;
+            opacity: 0.9;
+            font-family: Arial, sans-serif;
+        }
+
+        .image-caption {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            color: var(--text-secondary);
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-light);
+            line-height: 1.4;
+            word-wrap: break-word;
+        }
+
+        .image-credit {
+            color: var(--text-light);
+            font-size: 10px;
+        }
+
+        /* Article Content */
+        .article-content {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-primary);
+            width: 100%;
+        }
+
+        .article-content p {
+            margin-bottom: 16px;
+            word-wrap: break-word;
+        }
+
+        .drop-cap::first-letter {
+            float: left;
+            font-size: 50px;
+            line-height: 45px;
+            padding-right: 10px;
+            padding-top: 4px;
+            color: var(--primary-red);
+            font-weight: bold;
+        }
+
+        .article-content h2 {
+            font-size: 20px;
+            margin: 25px 0 12px;
+            color: var(--text-primary);
+            font-family: Arial, sans-serif;
+            font-weight: 700;
+            word-wrap: break-word;
+        }
+
+        .article-content h3 {
+            font-size: 18px;
+            margin: 20px 0 10px;
+            color: var(--text-secondary);
+            font-family: Arial, sans-serif;
+            word-wrap: break-word;
+        }
+
+        /* Winners Table */
+        .winners-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-family: Arial, sans-serif;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            font-size: 13px;
+            display: block;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .winners-table thead {
+            background: var(--primary-red);
+            color: white;
+        }
+
+        .winners-table th {
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .winners-table td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-light);
+            background: white;
+        }
+
+        .winners-table tr:nth-child(even) td {
+            background: var(--bg-light);
+        }
+
+        .rank-1 {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%) !important;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .rank-2 {
+            background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 100%) !important;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .rank-3 {
+            background: linear-gradient(135deg, #cd7f32 0%, #daa520 100%) !important;
+            font-weight: bold;
+            color: white;
+        }
+
+        /* Awards Box */
+        .awards-box {
+            background: var(--highlight-bg);
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            width: 100%;
+        }
+
+        .awards-box h3 {
+            color: #f57c00;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .awards-box ul {
+            list-style: none;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        .awards-box li {
+            padding: 6px 0;
+            padding-left: 22px;
+            position: relative;
+            border-bottom: 1px dashed #ffe0b2;
+            word-wrap: break-word;
+        }
+
+        .awards-box li:last-child {
+            border-bottom: none;
+        }
+
+        .awards-box li::before {
+            content: "🏆";
+            position: absolute;
+            left: 0;
+        }
+
+        /* Discount Box */
+        .discount-box {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            width: 100%;
+        }
+
+        .discount-box h3 {
+            color: #2e7d32;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .discount-box ul {
+            list-style: none;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        .discount-box li {
+            padding: 6px 0;
+            padding-left: 22px;
+            position: relative;
+            border-bottom: 1px dashed #c8e6c9;
+            word-wrap: break-word;
+        }
+
+        .discount-box li:last-child {
+            border-bottom: none;
+        }
+
+        .discount-box li::before {
+            content: "💰";
+            position: absolute;
+            left: 0;
+        }
+
+        /* Pull Quote */
+        .pull-quote {
+            width: 100%;
+            margin: 20px 0;
+            padding: 15px;
+            border-left: 4px solid var(--primary-red);
+            background: var(--bg-light);
+            font-size: 18px;
+            line-height: 1.4;
+            color: var(--text-primary);
+            font-style: italic;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .pull-quote::before {
+            content: '"';
+            font-size: 50px;
+            color: var(--primary-red);
+            position: absolute;
+            top: -5px;
+            left: 8px;
+            opacity: 0.3;
+        }
+
+        .quote-author {
+            display: block;
+            margin-top: 8px;
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-style: normal;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Key Points Box */
+        .key-points {
+            background: var(--bg-light);
+            border: 1px solid var(--border-light);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        .key-points h3 {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            color: var(--primary-red);
+        }
+
+        .key-points ul {
+            list-style: none;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        .key-points li {
+            padding: 6px 0;
+            padding-left: 22px;
+            position: relative;
+            border-bottom: 1px solid #e8e8e8;
+            word-wrap: break-word;
+        }
+
+        .key-points li:last-child {
+            border-bottom: none;
+        }
+
+        .key-points li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--primary-red);
+            font-weight: bold;
+        }
+
+        /* Tags */
+        .article-tags {
+            margin: 25px 0;
+            padding: 15px 0;
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+            width: 100%;
+        }
+
+        .tags-label {
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: var(--bg-light);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s;
+            word-wrap: break-word;
+        }
+
+        .tag:hover {
+            background: var(--primary-red);
+            color: white;
+        }
+
+        /* Related Articles */
+        .related-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: var(--bg-light);
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        .related-header {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--primary-red);
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .related-card {
+            background: white;
+            padding: 12px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .related-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .related-image {
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            border-radius: 4px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+        }
+
+        .related-title {
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+            word-wrap: break-word;
+        }
+
+        .related-meta {
+            font-size: 11px;
+            color: var(--text-light);
+        }
+
+        /* Source Link */
+        .source-link {
+            margin-top: 25px;
+            padding: 12px;
+            background: #e3f2fd;
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            text-align: center;
+            width: 100%;
+            word-wrap: break-word;
+        }
+
+        .source-link a {
+            color: #1976d2;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 30px 0;
+            margin-top: 40px;
+            font-family: Arial, sans-serif;
+            width: 100%;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .footer-section h4 {
+            color: var(--primary-red);
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 6px;
+        }
+
+        .footer-section a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            margin-top: 20px;
+            padding-top: 15px;
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+        }
+
+        /* Responsive */
+        @media (min-width: 768px) {
+            .article-container {
+                max-width: 800px;
+                padding: 20px;
+            }
+
+            .article-title {
+                font-size: 32px;
+            }
+
+            .article-subtitle {
+                font-size: 18px;
+            }
+
+            .article-content {
+                font-size: 18px;
+            }
+
+            .article-content h2 {
+                font-size: 24px;
+            }
+
+            .pull-quote {
+                float: right;
+                width: 300px;
+                margin: 20px -100px 20px 40px;
+            }
+
+            .related-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .winners-table {
+                display: table;
+                white-space: normal;
+                font-size: 14px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .related-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .footer-container {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .header, .nav-bar, .social-share, .footer, .related-section {
+                display: none;
+            }
+
+            .article-content {
+                font-size: 12pt;
+                line-height: 1.5;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="header-container">
+                <div class="header-date">April 12, 2018 | Updated 09:45 IST</div>
+                <div class="header-links">
+                    <a href="#">ePaper</a>
+                    <a href="#">Subscribe</a>
+                    <a href="#">Sign In</a>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="header-container">
+                <div class="logo-section">
+                    <button class="menu-btn">☰</button>
+                    <div class="logo">Edu<span>Chronicle</span></div>
+                    <div style="width: 40px;"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#" class="active">Education</a></li>
+                <li><a href="#">Entrance Exams</a></li>
+                <li><a href="#">Engineering</a></li>
+                <li><a href="#">Results</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Student Life</a></li>
+                <li><a href="#">Scholarships</a></li>
+                <li><a href="#">Campus News</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="article-container">
+        <span class="section-label">Exam Results</span>
+        
+        <header class="article-header">
+            <h1 class="article-title">Indian Engineering Olympiad 2018: NIT Jaipur, Jadavpur University, and JNTUK Students Clinch Top Honors</h1>
+            <h2 class="article-subtitle">Pradeep Singh secures AIR 1 from Malaviya National Institute of Technology, followed by Suresh Varma from Jadavpur University and Aguru Manoj Kumar from JNTUK in prestigious national-level engineering competition</h2>
+        </header>
+
+        <div class="article-meta">
+            <div class="author-info">
+                <div class="author-avatar">RK</div>
+                <div class="author-details">
+                    <span class="author-name">Ravi Kumar</span>
+                    <span class="author-title">Education Correspondent</span>
+                </div>
+            </div>
+            <span class="meta-divider">|</span>
+            <span class="publish-date">April 11, 2018 18:30 IST</span>
+            <span class="meta-divider">|</span>
+            <span class="reading-time">5 min read</span>
+            
+            <div class="social-share">
+                <button class="share-btn">📤</button>
+                <button class="share-btn">💾</button>
+                <button class="share-btn">💬</button>
+            </div>
+        </div>
+
+        <figure class="featured-image-container">
+            <div class="featured-image">
+                <div class="featured-image-content">
+                    <h2>🏆</h2>
+                    <p>Indian Engineering Olympiad 2018</p>
+                </div>
+            </div>
+            <figcaption class="image-caption">
+                The Indian Engineering Olympiad has emerged as one of the most prestigious competitive examinations for engineering students across the country.
+                <span class="image-credit">| Photo Credit: IEO Official</span>
+            </figcaption>
+        </figure>
+
+        <div class="article-content">
+            <p class="drop-cap">
+                In a remarkable display of academic excellence, three students from premier technical institutions have emerged as national toppers in the Indian Engineering Olympiad (IEO) 2018, showcasing the extraordinary talent pool present across India's diverse engineering landscape. The results, declared on April 11, 2018, by the Gate Forum in collaboration with McGraw Hill Education, have brought laurels to Malaviya National Institute of Technology (MNIT) Jaipur, Jadavpur University Kolkata, and Jawaharlal Nehru Technological University Kakinada (JNTUK).
+            </p>
+
+            <p>
+                <strong>Pradeep Singh</strong>, a third-year Civil Engineering student at Malaviya National Institute of Technology, Jaipur, has secured the coveted All India Rank (AIR) 1, demonstrating exceptional proficiency in core engineering concepts and problem-solving abilities. Hailing from the Pink City, Pradeep's achievement has not only brought pride to his institution but has also established MNIT Jaipur as a center of engineering excellence on the national map.
+            </p>
+
+            <p>
+                Following closely, <strong>Suresh Varma</strong> from Jadavpur University, Kolkata, has claimed AIR 2 in the same category. A third-year Civil Engineering student, Suresh's success underscores the continued academic rigor and quality of education at one of India's oldest and most respected universities. His performance from the Kolkata examination center highlights the strong engineering tradition present in Eastern India.
+            </p>
+
+            <p>
+                Completing the podium, <strong>Aguru Manoj Kumar</strong> from JNTUK University has secured AIR 3. Also pursuing third-year Civil Engineering, Manoj's achievement from the Visakhapatnam center demonstrates the rising standards of technical education in Andhra Pradesh and the capability of regional universities to compete at the highest national level.
+            </p>
+
+            <div class="key-points">
+                <h3>Key Highlights</h3>
+                <ul>
+                    <li>Results declared on April 11, 2018; Article published April 12, 2018</li>
+                    <li>Pradeep Singh (MNIT Jaipur) secures AIR 1 in Civil Engineering category</li>
+                    <li>Suresh Varma (Jadavpur University) claims AIR 2 from Kolkata center</li>
+                    <li>Aguru Manoj Kumar (JNTUK) bags AIR 3 from Visakhapatnam center</li>
+                    <li>All three toppers are third-year Civil Engineering students</li>
+                    <li>Results announced by Gate Forum in partnership with McGraw Hill Education</li>
+                    <li>Attractive scholarships and awards announced for top performers</li>
+                </ul>
+            </div>
+
+            <h2>Rewards and Recognition</h2>
+
+            <p>
+                The Indian Engineering Olympiad has announced an impressive array of rewards for successful candidates, making it one of the most lucrative competitive examinations for engineering students in the country. The prize structure has been designed to benefit not just the top rankers but also meritorious students across different score ranges.
+            </p>
+
+            <div class="awards-box">
+                <h3>🏆 Gate Forum Engineering Success Rewards</h3>
+                <ul>
+                    <li><strong>Top 3 Ranks</strong> in each category get <strong>100% discount</strong> on GATE preparation courses</li>
+                    <li><strong>81-100 Marks:</strong> 50% discount on all Gate Forum programs</li>
+                    <li><strong>51-80 Marks:</strong> 30% discount on selected courses</li>
+                    <li><strong>21-50 Marks:</strong> 20% discount on study materials</li>
+                    <li><strong>All Participants:</strong> 10% discount as participation reward</li>
+                </ul>
+            </div>
+
+            <div class="discount-box">
+                <h3>📚 McGraw Hill Education Awards</h3>
+                <ul>
+                    <li>Toppers in each category receive <strong>any one MHE Test Prep book</strong> of their preference</li>
+                    <li>Access to exclusive digital learning resources and practice tests</li>
+                    <li>Complimentary subscription to MHE's online engineering library</li>
+                </ul>
+            </div>
+
+            <h2>Complete Merit List</h2>
+
+            <p>
+                The official results declared on April 11, 2018, have confirmed the top three positions in the Civil Engineering category for third-year students. The detailed merit list is as follows:
+            </p>
+
+            <table class="winners-table">
+                <thead>
+                    <tr>
+                        <th>All India Rank</th>
+                        <th>Student Name</th>
+                        <th>College/University</th>
+                        <th>Year/Stream</th>
+                        <th>Exam Center</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="rank-1">🥇 AIR 1</td>
+                        <td><strong>Pradeep Singh</strong></td>
+                        <td>Malaviya National Institute of Technology, Jaipur</td>
+                        <td>3rd Year / Civil Engineering</td>
+                        <td>Jaipur</td>
+                    </tr>
+                    <tr>
+                        <td class="rank-2">🥈 AIR 2</td>
+                        <td><strong>Suresh Varma</strong></td>
+                        <td>Jadavpur University</td>
+                        <td>3rd Year / Civil Engineering</td>
+                        <td>Kolkata</td>
+                    </tr>
+                    <tr>
+                        <td class="rank-3">🥉 AIR 3</td>
+                        <td><strong>Aguru Manoj Kumar</strong></td>
+                        <td>JNTUK University</td>
+                        <td>3rd Year / Civil Engineering</td>
+                        <td>Visakhapatnam</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <aside class="pull-quote">
+                The Indian Engineering Olympiad continues to serve as a crucial platform for identifying and nurturing engineering talent from every corner of the country, from premier NITs to state universities.
+                <span class="quote-author">— Gate Forum Official Statement</span>
+            </aside>
+
+            <h2>About the Examination</h2>
+
+            <p>
+                The Indian Engineering Olympiad is a national-level competitive examination designed to test the technical aptitude and engineering knowledge of undergraduate students across various disciplines. Conducted annually, the examination has grown in prestige and participation, attracting students from IITs, NITs, state universities, and private colleges.
+            </p>
+
+            <p>
+                The 2018 edition witnessed record participation with over 50,000 students registering from more than 500 engineering colleges across India. The examination is conducted in multiple centers spread across major cities, ensuring accessibility for students from all regions.
+            </p>
+
+            <h3>Examination Pattern</h3>
+
+            <p>
+                The Olympiad follows a comprehensive testing pattern covering core engineering subjects, aptitude tests, and problem-solving assessments. For Civil Engineering students, the examination focuses on structural analysis, geotechnical engineering, transportation engineering, environmental engineering, and construction management.
+            </p>
+
+            <h2>Institutional Reactions</h2>
+
+            <p>
+                <strong>Malaviya National Institute of Technology, Jaipur</strong> has expressed immense pride in Pradeep Singh's achievement. The Director, in an official statement issued on April 12, 2018, congratulated the student and credited the institution's focus on research-oriented learning and industry collaboration for this success.
+            </p>
+
+            <p>
+                <strong>Jadavpur University</strong> officials highlighted Suresh Varma's consistent academic performance and dedication as key factors behind his AIR 2 ranking. The university, known for its strong engineering legacy, sees this as validation of its rigorous academic standards.
+            </p>
+
+            <p>
+                <strong>JNTUK University</strong> has celebrated Aguru Manoj Kumar's success as a testament to the quality of technical education in Andhra Pradesh. The Vice-Chancellor announced special recognition for the student and promised continued support for future endeavors.
+            </p>
+
+            <h2>Future Opportunities</h2>
+
+            <p>
+                The toppers of Indian Engineering Olympiad 2018 are now positioned for exceptional career opportunities. Beyond the immediate rewards from Gate Forum and McGraw Hill Education, the All India Rank 1, 2, and 3 holders will receive preference in campus placements, research opportunities, and higher education admissions.
+            </p>
+
+            <p>
+                Industry experts note that the IEO ranking has become a respected credential in the engineering sector, with many top companies specifically recruiting from the merit list. The examination's rigorous standards ensure that ranked students possess the practical knowledge and theoretical foundation required in modern engineering roles.
+            </p>
+
+            <p>
+                As the engineering education landscape in India continues to evolve, competitions like the Indian Engineering Olympiad play a vital role in setting benchmarks for excellence and providing students with platforms to showcase their capabilities on a national stage.
+            </p>
+
+            <div class="source-link">
+                <strong>Source:</strong> Official results published on <a href="http://engineeringolympiad.in">engineeringolympiad.in</a> and <a href="http://www.contest.net.in">www.contest.net.in</a>
+            </div>
+        </div>
+
+        <div class="article-tags">
+            <span class="tags-label">Tags</span>
+            <div class="tag-list">
+                <a href="#" class="tag">Indian Engineering Olympiad</a>
+                <a href="#" class="tag">IEO 2018</a>
+                <a href="#" class="tag">MNIT Jaipur</a>
+                <a href="#" class="tag">Jadavpur University</a>
+                <a href="#" class="tag">JNTUK</a>
+                <a href="#" class="tag">GATE Forum</a>
+                <a href="#" class="tag">Engineering Results</a>
+                <a href="#" class="tag">Civil Engineering</a>
+            </div>
+        </div>
+
+        <section class="related-section">
+            <h3 class="related-header">Related Articles</h3>
+            <div class="related-grid">
+                <article class="related-card">
+                    <div class="related-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">🎓</div>
+                    <h4 class="related-title">GATE 2019 Registration Opens: Check Eligibility and Important Dates</h4>
+                    <span class="related-meta">2 days ago</span>
+                </article>
+                <article class="related-card">
+                    <div class="related-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">📊</div>
+                    <h4 class="related-title">JEE Advanced 2018: IIT Bombay Announces Examination Pattern Changes</h4>
+                    <span class="related-meta">1 week ago</span>
+                </article>
+                <article class="related-card">
+                    <div class="related-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">🏛️</div>
+                    <h4 class="related-title">NIRF Rankings 2018: IIT Madras Retains Top Spot</h4>
+                    <span class="related-meta">1 month ago</span>
+                </article>
+                <article class="related-card">
+                    <div class="related-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">💼</div>
+                    <h4 class="related-title">Campus Placements 2018: Tech Giants Return with Record Salary Offers</h4>
+                    <span class="related-meta">2 months ago</span>
+                </article>
+            </div>
+        </section>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Sections</h4>
+                <ul>
+                    <li><a href="#">Education</a></li>
+                    <li><a href="#">Entrance Exams</a></li>
+                    <li><a href="#">Engineering</a></li>
+                    <li><a href="#">Medical</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Code of Ethics</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Subscribe</h4>
+                <ul>
+                    <li><a href="#">Digital Subscription</a></li>
+                    <li><a href="#">Print Subscription</a></li>
+                    <li><a href="#">Newsletter</a></li>
+                    <li><a href="#">Exam Alerts</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Telegram</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2018 Edu Chronicle. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
             font-weight: 500;
         }
 
