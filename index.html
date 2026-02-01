@@ -348,17 +348,7 @@
             word-wrap: break-word;
         }
 
-        /* Elegant Drop Cap Styling - Newspaper Style */
-        .drop-cap::first-letter {
-            float: left;
-            font-size: 3.2em;
-            line-height: 0.9;
-            padding-right: 10px;
-            padding-top: 4px;
-            color: var(--text-primary);
-            font-weight: 400;
-            font-family: 'Times New Roman', Georgia, serif;
-        }
+        /* Removed Drop Cap Styling - now normal paragraph */
 
         .article-content h2 {
             font-size: 20px;
@@ -889,11 +879,6 @@
             .image-gallery {
                 grid-template-columns: repeat(2, 1fr);
             }
-
-            .drop-cap::first-letter {
-                font-size: 3.5em;
-                line-height: 0.85;
-            }
         }
 
         @media (min-width: 1024px) {
@@ -963,7 +948,7 @@
     <!-- Article -->
     <article class="article-container">
         <span class="section-label">Exam Results</span>
-        
+
         <header class="article-header">
             <h1 class="article-title">Indian Engineering Olympiad 2018: NIT Trichy, JNTUK, and Jadavpur University Students Clinch Top Honors</h1>
             <h2 class="article-subtitle">Abhishek Raj secures AIR 1 from National Institute of Technology Trichy, followed by Aguru Manoj Kumar from JNTUK and Suresh Varma from Jadavpur University in prestigious national-level engineering competition</h2>
@@ -981,7 +966,7 @@
             <span class="publish-date">April 11, 2018 18:30 IST</span>
             <span class="meta-divider">|</span>
             <span class="reading-time">5 min read</span>
-            
+
             <div class="social-share">
                 <button class="share-btn">📤</button>
                 <button class="share-btn">💾</button>
@@ -1000,7 +985,7 @@
         </figure>
 
         <div class="article-content">
-            <p class="drop-cap">
+            <p>
                 In a remarkable display of academic excellence, three students from premier technical institutions have emerged as national toppers in the Indian Engineering Olympiad (IEO) 2018, showcasing the extraordinary talent pool present across India's diverse engineering landscape. The results, declared on April 11, 2018, by the Gate Forum in collaboration with McGraw Hill Education, have brought laurels to National Institute of Technology (NIT) Trichy, Jawaharlal Nehru Technological University Kakinada (JNTUK), and Jadavpur University Kolkata.
             </p>
 
@@ -1183,8 +1168,7 @@
             </p>
 
             <div class="source-link">
-                <strong>Source:</strong> Official results published on <a href="http://engineeringolympiad.in">engineeringolympiad.in</a> | 
-                <a href="https://rebrand.ly/ieo-results-f632c8">rebrand.ly/ieo-results-f632c8</a>
+                <strong>Source:</strong> Official results published on <a href="http://engineeringolympiad.in">engineeringolympiad.in</a>
             </div>
         </div>
 
